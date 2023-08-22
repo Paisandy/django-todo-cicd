@@ -20,6 +20,12 @@ pipeline {
       }
     }
 
+    stage('testing') {
+      steps {
+        sh 'docker-compose up -d --no-deps --build web'
+      }
+    }
+
   }
   environment {
     djangopractice = ''
